@@ -1,25 +1,21 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { HomePage } from './pages/HomePage/HomePage';
+import { GroupPage } from './pages/GroupPage/GroupPage';
+import { CreateGroup } from './pages/CreateGroup/CreateGroup';
+import { CreateStudent } from './pages/CreateStudent/CreateStudent';
+import { CreateMark } from './pages/CreateMark/CreateMark';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <BrowserRouter>
+      <Routes>
+        <Route path='/' element={<HomePage />} />
+        <Route path='/groups/:groupId' element={<GroupPage />} />
+        <Route path='/create/group' element={<CreateGroup />} />
+        <Route path='/create/student' element={<CreateStudent />} />
+        <Route path='/create/mark' element={<CreateMark />} />
+      </Routes>
+    </BrowserRouter>
   );
 }
 
