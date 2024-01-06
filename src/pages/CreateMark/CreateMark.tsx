@@ -18,7 +18,7 @@ export function CreateMark() {
   }, [groupID]);
 
   useEffect(() => {
-    fetch('http://127.0.0.1:5000/groups')
+    fetch(`${process.env.REACT_APP_BACKEND_URL}/groups`)
       .then((data) => data.json())
       .then((groupsData) => {
         setGroups(groupsData);
@@ -39,7 +39,7 @@ export function CreateMark() {
         studentID: studentID,
         groupID: groupID,
       };
-      fetch(`http://127.0.0.1:5000/marks/new`, {
+      fetch(`${process.env.REACT_APP_BACKEND_URL}/marks/new`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

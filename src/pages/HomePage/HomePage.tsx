@@ -8,7 +8,7 @@ export function HomePage() {
   const [groups, setGroups] = useState([]);
 
   useEffect(() => {
-    fetch('http://127.0.0.1:5000/groups')
+    fetch(`${process.env.REACT_APP_BACKEND_URL}/groups`)
       .then((res) => res.json())
       .then((groupsData) => {
         setGroups(groupsData);

@@ -9,7 +9,7 @@ export function CreateStudent() {
   const [groups, setGroups] = useState<any>([]);
 
   useEffect(() => {
-    fetch('http://127.0.0.1:5000/groups')
+    fetch(`${process.env.REACT_APP_BACKEND_URL}/groups`)
       .then((data) => data.json())
       .then((groupsData) => {
         setGroups(groupsData);
@@ -27,7 +27,7 @@ export function CreateStudent() {
         marks: [],
         groupID: groupID,
       };
-      fetch(`http://127.0.0.1:5000/students/new`, {
+      fetch(`${process.env.REACT_APP_BACKEND_URL}/students/new`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

@@ -11,7 +11,7 @@ export function GroupPage() {
   const params = useParams();
 
   useEffect(() => {
-    fetch(`http://127.0.0.1:5000/groups/${params.groupId}`)
+    fetch(`${process.env.REACT_APP_BACKEND_URL}/groups/${params.groupId}`)
       .then((res) => res.json())
       .then((groupData) => {
         setGroup(groupData);
