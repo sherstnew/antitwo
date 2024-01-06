@@ -23,7 +23,7 @@ app.use(function (req, res, next) {
 });
 
 // mongoose.connect('mongodb://127.0.0.1:27017/antitwo');
-mongoose.connect('mongodb+srv://sherstnev:qebeh22@cluster0.gtw16wm.mongodb.net/');
+mongoose.connect(process.env.MONGODB_URL);
 
 const Group = mongoose.model('group', GroupSchema);
 const Student = mongoose.model('student', StudentSchema);
