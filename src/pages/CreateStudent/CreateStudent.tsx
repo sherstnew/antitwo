@@ -27,7 +27,7 @@ export function CreateStudent() {
         marks: [],
         groupID: groupID,
       };
-      fetch(`${process.env.REACT_APP_BACKEND_URL}/students/new`, {
+      fetch(`${process.env.REACT_APP_BACKEND_URL}/students`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

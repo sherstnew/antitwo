@@ -25,7 +25,7 @@ export function CreateGroup () {
       name: groupName,
       students: students,
     };
-    fetch(`${process.env.REACT_APP_BACKEND_URL}/groups/new`, {
+    fetch(`${process.env.REACT_APP_BACKEND_URL}/groups`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',

@@ -39,7 +39,7 @@ export function CreateMark() {
         studentID: studentID,
         groupID: groupID,
       };
-      fetch(`${process.env.REACT_APP_BACKEND_URL}/marks/new`, {
+      fetch(`${process.env.REACT_APP_BACKEND_URL}/marks`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
